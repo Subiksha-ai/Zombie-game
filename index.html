@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Escape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-area" id="game-area">
+            <!-- Game elements will be created dynamically -->
+        </div>
+        <div class="ui">
+            <div class="timer">Time: <span id="timer">0</span>s</div>
+            <div class="lives" id="lives">❤️❤️❤️</div>
+        </div>
+        <div class="tool-display" id="tool-display">No tool equipped</div>
+        <div id="game-over" class="game-over">
+            <h2>Game Over</h2>
+            <p>You survived for <span id="final-time">0</span> seconds</p>
+            <button id="restart-button">Try Again</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

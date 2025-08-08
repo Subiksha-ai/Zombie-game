@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    position: relative;
+    width: 600px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-area {
+    width: 600px;
+    height: 600px;
+    background-color: #333;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%23333"/><rect width="50" height="50" fill="%23383838"/><rect x="50" y="50" width="50" height="50" fill="%23383838"/></svg>');
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #555;
+}
+
+.ui {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: #222;
+}
+
+.tool-display {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    background-color: #222;
+}
+
+.player, .zombie, .tool {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.player {
+    width: 30px;
+    height: 30px;
+    background-color: #4a90e2;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.zombie {
+    width: 30px;
+    height: 30px;
+    z-index: 5;
+}
+
+.tool {
+    width: 25px;
+    height: 25px;
+    z-index: 3;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    z-index: 100;
+}
+
+#restart-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#restart-button:hover {
+    background-color: #357abd;
+}
+
+.attack-animation {
+    animation: attack 0.5s;
+}
+
+@keyframes attack {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
